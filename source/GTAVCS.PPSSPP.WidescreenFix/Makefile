@@ -1,4 +1,4 @@
-TARGET = mgs_remastered
+TARGET = GTAVCS.PPSSPP.WidescreenFix
 OBJS = main.o exports.o
 
 CFLAGS = -O2 -Os -G0 -Wall -fshort-wchar -fno-pic -mno-check-zero-division
