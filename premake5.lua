@@ -312,7 +312,6 @@ project "GTAVCS.PPSSPP.WidescreenFix"
    files { "source/%{prj.name}/*.c" }
    targetextension ".prx"
    setbuildpaths_psp("Z:/WFP/Games/PPSSPP/", "PPSSPPWindows64.exe", "memstick/PSP/PLUGINS/GTAVCS.PPSSPP.WidescreenFix/", "%{wks.location}/../external/pspsdk/bin/vsmake", "%{wks.location}/../source/%{prj.name}/", "GTAVCS.PPSSPP.WidescreenFix")
-   writemakefile_psp("GTAVCS.PPSSPP.WidescreenFix", "lodl.c")
    writeghaction("gtavcspsp", "GTAVCS.PPSSPP.WidescreenFix")
 project "GTACTW.PPSSPP.FusionMod"
    kind "Makefile"
