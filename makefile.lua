@@ -7,9 +7,9 @@
       files = string.gsub(files, "^%s*(.-)%s*$", "%1")
       file = io.open("source/" .. prj_name .. "/makefile", "w")
       if (file) then
-str = [[
+str = [[		
 TARGET = ../../data/%s/memstick/PSP/PLUGINS/%s/%s
-OBJS = %s exports.o ../../includes/psp/injector.o ../../includes/psp/log.o ../../includes/psp/patterns.o ../../includes/psp/rini.o ../../includes/psp/inireader.o ../../includes/psp/gvm.o ../../includes/psp/mips.o
+OBJS = main.o exports.o
 
 CFLAGS = -O2 -Os -G0 -Wall -fshort-wchar -fno-pic -mno-check-zero-division
 CXXFLAGS = $(CFLAGS) -fno-exceptions -fno-rtti
@@ -18,9 +18,10 @@ ASFLAGS = $(CFLAGS)
 BUILD_PRX = 1
 PRX_EXPORTS = exports.exp
 
-USE_PSPSDK_LIBC = 1
+USE_KERNEL_LIBC = 1
+USE_KERNEL_LIBS = 1
 
-LIBS = -lpspsystemctrl_kernel -lm
+LIBS = -lpspsystemctrl_kernel
 
 PSPSDK = $(shell psp-config --pspsdk-path)
 include $(PSPSDK)/lib/build_prx.mak
